@@ -19,9 +19,6 @@ public class LaunchpadProjectActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        month = (TextView) findViewById(R.id.month); 
-        day = (TextView) findViewById(R.id.day); 
-        year = (TextView) findViewById(R.id.month); 
          Calendar c = Calendar.getInstance(); 
          month.setText(c.get(Calendar.MONTH) + "");
      //   day.setText(c.get(Calendar.DAY_OF_MONTH));
