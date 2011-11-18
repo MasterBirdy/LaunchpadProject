@@ -4,24 +4,6 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/month"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Jan" />
-    <TextView
-        android:id="@+id/day"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="1"
-        android:layout_below="@+id/month" />
-    <TextView
-        android:id="@+id/year"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="2000"
-        android:layout_below="@+id/day"/>
-
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
@@ -30,10 +12,10 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/year"
         android:text="Month" />
-
+
     <Button
         android:id="@+id/button2"
-        android:layout_width="80dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/button1"
@@ -41,7 +23,7 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="80dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button1"
         android:layout_toRightOf="@+id/button2"
@@ -49,7 +31,7 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="80dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button1"
         android:layout_toRightOf="@+id/button3"
@@ -57,28 +39,70 @@
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="80dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button1"
         android:layout_toRightOf="@+id/button4"
         android:text="Week4" />
-
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button1"
+        android:layout_toRightOf="@+id/button5"
+        android:text="Week5" />
+
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/button5"
         android:orientation="vertical" >
-
+
         <EditText
             android:id="@+id/editText1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="336dp"
             android:inputType="textMultiLine" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="All" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/button7"
+        android:text="A"
+        android:textColor="#EE0000" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/button8"
+        android:text="S" 
+        android:textColor="#458B00"/>
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/button10"
+        android:text="P"
+        android:textColor="#20B2AA" />
 
 </RelativeLayout>

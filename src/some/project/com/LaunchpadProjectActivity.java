@@ -22,10 +22,10 @@ public class LaunchpadProjectActivity extends Activity {
         month = (TextView) findViewById(R.id.month); 
         day = (TextView) findViewById(R.id.day); 
         year = (TextView) findViewById(R.id.month); 
-        Calendar c = Calendar.getInstance(); 
-        month.setText(c.get(Calendar.MONTH));
-        day.setText(c.get(Calendar.DAY_OF_MONTH));
-        year.setText(c.get(Calendar.YEAR));
+         Calendar c = Calendar.getInstance(); 
+         month.setText(c.get(Calendar.MONTH) + "");
+     //   day.setText(c.get(Calendar.DAY_OF_MONTH));
+       // year.setText(c.get(Calendar.YEAR));
         
         week1 = (Button)findViewById(R.id.button2);
         week1.setBackgroundColor(Color.BLUE);
