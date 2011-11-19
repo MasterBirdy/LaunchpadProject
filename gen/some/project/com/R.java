@@ -28,11 +28,11 @@ public final class R {
         public static final int button7=0x7f06000c;
         public static final int button8=0x7f06000d;
         public static final int button9=0x7f06000f;
+        public static final int buttonYes=0x7f060004;
         public static final int calendar=0x7f060002;
         public static final int editText1=0x7f06000b;
         public static final int linearLayout1=0x7f06000a;
         public static final int spinnerMonth=0x7f060001;
-        public static final int year=0x7f060004;
     }
     public static final class layout {
         public static final int addevent=0x7f030000;

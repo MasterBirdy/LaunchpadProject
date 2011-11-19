@@ -3,14 +3,13 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-
+
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/year"
+        android:layout_toLeftOf="@+id/buttonYes"
         android:text="Month" />
 
     <Button
@@ -104,5 +103,13 @@
         android:layout_toRightOf="@+id/button10"
         android:text="P"
         android:textColor="#20B2AA" />
+
+    <Button
+        android:id="@+id/buttonYes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="Year" />
 
 </RelativeLayout>
