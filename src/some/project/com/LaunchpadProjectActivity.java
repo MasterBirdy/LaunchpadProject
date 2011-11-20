@@ -14,6 +14,7 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
@@ -37,6 +38,7 @@ public class LaunchpadProjectActivity extends Activity {
 	private Animation slideRightIn;
     private Animation slideRightOut;
     private ViewFlipper viewFlipper;
+    private EditText editText1;
     Calendar c = Calendar.getInstance(); 
     
     /** Called when the activity is first created. */
@@ -53,7 +55,8 @@ public class LaunchpadProjectActivity extends Activity {
          yearButton.setText(c.get(Calendar.YEAR) + "");
         textDate.setText(c.getDisplayName(Calendar.MONTH, Calendar.LONG,  Locale.US) + " " + c.get(Calendar.DATE) + ", " +c.get(Calendar.YEAR));
         week1 = (Button)findViewById(R.id.button2);
-        week1.setBackgroundColor(Color.BLUE);
+        editText1 = (EditText) findViewById(R.id.editText1);
+        editText1.setFocusable(false);
         slideLeftIn = AnimationUtils.loadAnimation(this, R.anim.slide_left_in);
         slideLeftOut = AnimationUtils.loadAnimation(this, R.anim.slide_left_out);
         slideRightIn = AnimationUtils.loadAnimation(this, R.anim.slide_right_in);
