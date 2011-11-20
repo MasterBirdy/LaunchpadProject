@@ -11,6 +11,7 @@ import android.view.View.OnTouchListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
@@ -61,7 +62,14 @@ public class LaunchpadProjectActivity extends Activity {
         slideLeftOut = AnimationUtils.loadAnimation(this, R.anim.slide_left_out);
         slideRightIn = AnimationUtils.loadAnimation(this, R.anim.slide_right_in);
         slideRightOut = AnimationUtils.loadAnimation(this, R.anim.slide_right_out);
-        
+        monthButton.setOnClickListener(new View.OnClickListener(){
+        	public void onClick( View v) {
+        		Intent i = new Intent();
+        		i.setClassName("some.project.com",
+        		"some.project.com.AddEvent");
+        		startActivity(i);
+        	}
+        });
         gestureDetector = new GestureDetector(new MyGestureDetector());
         gestureListener = new View.OnTouchListener() {
             public boolean onTouch(View v, MotionEvent event) {
