@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-
+
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
@@ -52,23 +53,75 @@
         android:layout_toRightOf="@+id/button5"
         android:text="Week5" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/button5"
-        android:orientation="vertical" >
-
-        <EditText
-            android:id="@+id/editText1"
-            android:layout_width="match_parent"
-            android:layout_height="336dp"
-            android:inputType="textMultiLine" />
+    <ViewFlipper 
+    	android:id="@+id/flipper"
+    	android:layout_width="fill_parent" 
+    	android:layout_height="fill_parent"
+        android:layout_above="@+id/button7"
+         android:layout_below="@+id/button3"
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
+        
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/date"
+                android:layout_toLeftOf="@+id/button6"
+                android:layout_toRightOf="@+id/button2"
+                android:orientation="vertical"
+                        android:layout_centerHorizontal="true"
+        android:gravity="center"> >
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/linearLayout1"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="Month Day, Year"
+                    android:textSize="24dp" />
 
+                <EditText
+                    android:id="@+id/editText1"
+                    android:layout_width="319dp"
+                    android:layout_height="250dp"
+                    android:layout_weight="0.77"
+                    android:inputType="textMultiLine" />
+            </LinearLayout>
+            
+                
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/date"
+                android:layout_toLeftOf="@+id/button6"
+                android:layout_toRightOf="@+id/button2"
+                android:orientation="vertical"
+                        android:layout_centerHorizontal="true"
+        android:gravity="center"> >
+
+                <TextView
+                    android:id="@+id/date1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/linearLayout1"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="Month Day, Year"
+                    android:textSize="24dp" />
+
+                <EditText
+                    android:id="@+id/editText1"
+                    android:layout_width="319dp"
+                    android:layout_height="250dp"
+                    android:layout_weight="0.77"
+                    android:inputType="textMultiLine" />
+            </LinearLayout>
+
+</ViewFlipper>
     <Button
         android:id="@+id/button7"
         android:layout_width="80dp"
@@ -92,8 +145,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/button8"
-        android:text="S" 
-        android:textColor="#458B00"/>
+        android:text="S"
+        android:textColor="#458B00" />
 
     <Button
         android:id="@+id/button9"
