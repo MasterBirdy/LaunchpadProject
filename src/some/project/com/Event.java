@@ -1,6 +1,7 @@
 package some.project.com;
 
 
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -156,7 +157,6 @@ public class Event
     	{
     		System.err.println (e.getMessage());
     	}
-    	System.out.println ("Result string is:\n" + result + "\n");
     	String [] individualEventList = result.split("NEXT_EVENT");
     	//Array contained null elements at the end that threw and exception
     	//Array is therefore parsed to remove the last element
@@ -169,6 +169,20 @@ public class Event
 	}
 	
 	
+	/**
+	 * Adds an event into the Sheet1 table
+	 * @param eventDetails - event details must be in the following order
+	 * eventName
+	 * date
+	 * startTime
+	 * endTime
+	 * description
+	 * location
+	 * academic
+	 * social
+	 * professional
+	 * @return
+	 */
 	
 	public static boolean addEvent (ArrayList <String> eventDetails)
 	{
@@ -181,19 +195,43 @@ public class Event
 			urlValue += categories[i++] + "=" + eventDetail + "&";
 		}
 		urlValue = urlValue.substring(0, urlValue.length()-1);
-		
+		urlValue = urlValue.replace(" ", "%20");
 		try
     	{
     		HttpClient httpClient = new DefaultHttpClient();
-    		HttpPost httpPost = 
-    			new HttpPost(urlValue);
+    		HttpPost httpPost = new HttpPost(urlValue);
     		HttpResponse response = httpClient.execute(httpPost);
     	}
     	catch (Exception e)
     	{
-    		System.err.println (e.getMessage());
+    		System.out.println (e.getMessage());
+    		System.out.println (e);
+    		eventAdded = false;
     	}
 		return eventAdded;
 	}
+	
+	/*
+	
+	public static void main (String [] args)
+	{
+		ArrayList <String> eventDetails = new ArrayList <String> ();
+		eventDetails.add("Test Event 5");
+		eventDetails.add("2010-10-10");
+		eventDetails.add("060000");
+		eventDetails.add("190000");
+		eventDetails.add("Description");
+		eventDetails.add("Test Location");
+		eventDetails.add("1");
+		eventDetails.add("0");
+		eventDetails.add("1");
+		if (Event.addEvent(eventDetails))
+			System.out.println ("Added event");
+		for (Event event: Event.getMatchingEvents("Academic", "1"))
+			System.out.println (event.getName());
+		
+	}
+	
+	*/
 
 }
