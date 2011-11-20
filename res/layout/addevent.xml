@@ -69,47 +69,10 @@
         android:layout_alignRight="@+id/spinnerMonth"
         android:layout_below="@+id/spinnerMonth"
         android:layout_marginBottom="318dp"
-        android:layout_marginRight="48dp"
+        android:layout_marginLeft="22dp"
         android:gravity="center"
         android:text="Start"
         android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignRight="@+id/textView3"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_marginLeft="92dp"
-        android:layout_marginRight="50dp"
-        android:inputType="time" >
-
-        <requestFocus />
-    </EditText>
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignLeft="@+id/spinnerDay"
-        android:layout_alignRight="@+id/spinnerDay"
-        android:layout_alignTop="@+id/editText1"
-        android:layout_marginLeft="58dp"
-        android:gravity="center"
-        android:text="End"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/spinnerYear"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/textView3"
-        android:layout_marginRight="30dp"
-        android:inputType="time" />
 
     <TextView
         android:id="@+id/textView4"
@@ -118,7 +81,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignRight="@+id/spinnerMonth"
-        android:layout_below="@+id/editText1"
         android:layout_marginBottom="270dp"
         android:layout_marginRight="22dp"
         android:gravity="center"
@@ -159,7 +121,6 @@
         android:layout_marginTop="48dp"
         android:inputType="textMultiLine" />
 
-
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
@@ -170,41 +131,76 @@
         android:text="Event Type"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/spinnerYear"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/spinnerYear"
+        android:layout_marginRight="28dp"
+        android:inputType="time" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editText2"
+        android:layout_alignBottom="@+id/editText2"
+        android:layout_alignRight="@+id/spinnerDay"
+        android:gravity="center"
+        android:text="End"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignLeft="@+id/spinnerDay"
+        android:layout_toLeftOf="@+id/textView3"
+        android:inputType="time" />
+
     <CheckBox
         android:id="@+id/checkBox3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/editText2"
         android:layout_alignTop="@+id/textView7"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="18dp"
         android:text="P" />
-
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/checkBox3"
-        android:layout_alignBottom="@+id/checkBox3"
-        android:layout_centerHorizontal="true"
-        android:text="S" />
 
     <CheckBox
         android:id="@+id/checkBox1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/checkBox2"
-        android:layout_alignBottom="@+id/checkBox2"
-        android:layout_alignRight="@+id/textView4"
+        android:layout_alignBaseline="@+id/checkBox3"
+        android:layout_alignBottom="@+id/checkBox3"
+        android:layout_centerHorizontal="true"
         android:text="A" />
 
-    <Button
-        android:id="@+id/button1"
+    <CheckBox
+        android:id="@+id/checkBox2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBox2"
-        android:layout_marginTop="16dp"
+        android:layout_alignBaseline="@+id/checkBox1"
+        android:layout_alignBottom="@+id/checkBox1"
+        android:layout_alignRight="@+id/textView4"
+        android:text="S" />
+
+    <Button
+        android:id="@+id/buttonSendFeedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText1"
+        android:layout_below="@+id/checkBox1"
+        android:layout_marginRight="17dp"
         android:layout_toLeftOf="@+id/checkBox3"
-        android:layout_toRightOf="@+id/checkBox1"
+        android:onClick="sendFeedback"
         android:text="Add Event" />
 
 </RelativeLayout>
