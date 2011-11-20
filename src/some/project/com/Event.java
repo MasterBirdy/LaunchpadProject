@@ -1,9 +1,11 @@
 package some.project.com;
 
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 
 import org.apache.http.HttpEntity;
@@ -134,6 +136,7 @@ public class Event
     		urlValue += "Category=" + category + "&" + category + "=" + categoryValue;
     		HttpPost httpPost = 
     			new HttpPost(urlValue);
+    		//Url was hardcoded in
 //    		httpPost.setEntity (new UrlEncodedFormEntity(namePairs));
     		HttpResponse response = httpClient.execute(httpPost);
     		HttpEntity entity = response.getEntity();
@@ -153,12 +156,44 @@ public class Event
     	{
     		System.err.println (e.getMessage());
     	}
-    	for (String eventsS: result.split("NEW_EVENT"))
+    	System.out.println ("Result string is:\n" + result + "\n");
+    	String [] individualEventList = result.split("NEXT_EVENT");
+    	//Array contained null elements at the end that threw and exception
+    	//Array is therefore parsed to remove the last element
+    	individualEventList = Arrays.copyOfRange (individualEventList, 0, individualEventList.length-1);
+    	for (String event: individualEventList)
     	{
-    		matchingEvents.add (new Event(eventsS.split("##")));
+    		matchingEvents.add (new Event(event.split("##")));
     	}
     	return matchingEvents;		
 	}
 	
 	
+	
+	public static boolean addEvent (ArrayList <String> eventDetails)
+	{
+		boolean eventAdded = true;
+		String [] categories = {"eventName", "date", "startTime", "endTime", "description", "location", "academic", "social", "professional"};
+		String urlValue = "http://team1.appjam.roboteater.com/submitEvent.php?";
+		int i =0;
+		for (String eventDetail: eventDetails)
+		{
+			urlValue += categories[i++] + "=" + eventDetail + "&";
+		}
+		urlValue = urlValue.substring(0, urlValue.length()-1);
+		
+		try
+    	{
+    		HttpClient httpClient = new DefaultHttpClient();
+    		HttpPost httpPost = 
+    			new HttpPost(urlValue);
+    		HttpResponse response = httpClient.execute(httpPost);
+    	}
+    	catch (Exception e)
+    	{
+    		System.err.println (e.getMessage());
+    	}
+		return eventAdded;
+	}
+
 }
