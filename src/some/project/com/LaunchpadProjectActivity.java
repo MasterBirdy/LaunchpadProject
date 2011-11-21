@@ -23,6 +23,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 public class LaunchpadProjectActivity extends Activity {
@@ -68,7 +69,7 @@ public class LaunchpadProjectActivity extends Activity {
 		
 	     if (!isOnline())
 	        {
-	        	alert = new AlertDialog.Builder(getApplicationContext()).create();
+	        	/*alert = new AlertDialog.Builder(getApplicationContext()).create();
 	        	alert.setTitle("Error");
 	        	alert.setMessage("No network connection");
 	        	alert.setButton("Close", new DialogInterface.OnClickListener() {
@@ -78,8 +79,9 @@ public class LaunchpadProjectActivity extends Activity {
 						return;
 					}
 				});
-	        	alert.show();
-	        	this.finish();
+	        	alert.show();*/
+	    	 	Toast.makeText(getApplicationContext(), "This doesn't work!", Toast.LENGTH_LONG);
+	        	//this.finish();
 	        }
 
 		monthButton = (Button) findViewById(R.id.button1);         // R.id.findStuff
@@ -197,13 +199,13 @@ public class LaunchpadProjectActivity extends Activity {
 	
     public boolean isOnline()
     {
-    	connect = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-    	net = connect.getActiveNetworkInfo();
-    	
-    	if ((net != null) && (net.isConnectedOrConnecting()))
-    			return true;
-    	else
+    	final ConnectivityManager conMgr =  (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+    	final NetworkInfo activeNetwork = conMgr.getActiveNetworkInfo();
+    	if (activeNetwork != null && activeNetwork.getState() == NetworkInfo.State.CONNECTED) {
+    		return true;
+    	} else {
     		return false;
+    	}
     }
 }
 
