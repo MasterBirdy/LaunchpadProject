@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/button1"
-        android:text="Week1" />
+        android:text="Wk1" />
 
     <Button
         android:id="@+id/button3"
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button1"
         android:layout_toRightOf="@+id/button2"
-        android:text="Week2" />
+        android:text="Wk2" />
 
     <Button
         android:id="@+id/button4"
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button1"
         android:layout_toRightOf="@+id/button3"
-        android:text="Week3" />
+        android:text="Wk3" />
 
     <Button
         android:id="@+id/button5"
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button1"
         android:layout_toRightOf="@+id/button4"
-        android:text="Week4" />
+        android:text="Wk4" />
 
     <Button
         android:id="@+id/button6"
@@ -51,7 +51,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button1"
         android:layout_toRightOf="@+id/button5"
-        android:text="Week5" />
+        android:text="Wk5" />
+   <Button
+        android:id="@+id/button6TWO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button1"
+        android:layout_toRightOf="@+id/button6"
+        android:text="Wk6" />
 
     <ViewFlipper 
     	android:id="@+id/flipper"

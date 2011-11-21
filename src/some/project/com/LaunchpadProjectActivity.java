@@ -31,6 +31,11 @@ public class LaunchpadProjectActivity extends Activity {
 	private TextView textDate; // date text
 	private TextView textDate1; // alternative layout date text
 	private Button week1;
+	private Button week2;
+	private Button week3;
+	private Button week4;
+	private Button week5;
+	private Button week6;
 	private Button yearButton; 
 	private Button monthButton;
 
@@ -90,6 +95,11 @@ public class LaunchpadProjectActivity extends Activity {
 		textDate1 = (TextView) findViewById(R.id.date1);
 		viewFlipper = (ViewFlipper) findViewById(R.id.flipper);
 		week1 = (Button)findViewById(R.id.button2);
+		week2 = (Button)findViewById(R.id.button3);
+		week3 = (Button)findViewById(R.id.button4);
+		week4 = (Button)findViewById(R.id.button5);
+		week5 = (Button)findViewById(R.id.button6);
+		week6 = (Button)findViewById(R.id.button6TWO);
 		editText1 = (EditText) findViewById(R.id.editTextNotAlt);
 		editText2 = (EditText) findViewById(R.id.editTextAlt);
 
@@ -106,6 +116,63 @@ public class LaunchpadProjectActivity extends Activity {
 		slideLeftOut = AnimationUtils.loadAnimation(this, R.anim.slide_left_out);
 		slideRightIn = AnimationUtils.loadAnimation(this, R.anim.slide_right_in);
 		slideRightOut = AnimationUtils.loadAnimation(this, R.anim.slide_right_out);
+		
+		week1.setOnClickListener(new View.OnClickListener(){
+			public void onClick(View v) {
+				c.set(Calendar.DATE, 1);
+				updateWhichLayout();
+			}
+		});
+		
+		week2.setOnClickListener(new View.OnClickListener(){
+			public void onClick(View v) {
+				c.set(Calendar.WEEK_OF_MONTH, 2);
+				c.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
+				updateWhichLayout();
+			}
+		});
+		week3.setOnClickListener(new View.OnClickListener(){
+			public void onClick(View v) {
+				c.set(Calendar.WEEK_OF_MONTH, 3);
+				c.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
+				updateWhichLayout();
+			}
+		});
+		week4.setOnClickListener(new View.OnClickListener(){
+			public void onClick(View v) {
+				c.set(Calendar.WEEK_OF_MONTH, 4);
+				c.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
+				updateWhichLayout();
+			}
+		});
+		week5.setOnClickListener(new View.OnClickListener(){
+			public void onClick(View v) {
+				Calendar c1 = Calendar.getInstance(); 
+				c1.set(Calendar.WEEK_OF_MONTH, 5);
+				c1.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
+				if (c.get(Calendar.MONTH) != c1.get(Calendar.MONTH))
+					Toast.makeText(getApplicationContext(), "This month does not have a week 5.", Toast.LENGTH_LONG);
+				else {
+					c.set(Calendar.WEEK_OF_MONTH, 5);
+					c.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
+					updateWhichLayout();
+				}
+			}
+		});
+		week6.setOnClickListener(new View.OnClickListener(){
+			public void onClick(View v) {
+				Calendar c1 = Calendar.getInstance(); 
+				c1.set(Calendar.WEEK_OF_MONTH, 6);
+				c1.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
+				if (c.get(Calendar.MONTH) != c1.get(Calendar.MONTH))
+					Toast.makeText(getApplicationContext(), "This month does not have a week 6.", Toast.LENGTH_LONG);
+				else {
+					c.set(Calendar.WEEK_OF_MONTH, 6);
+					c.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
+					updateWhichLayout();
+				}
+			}
+		});
 
 		// goes to addEvent activity
 		monthButton.setOnClickListener(new View.OnClickListener(){
@@ -142,35 +209,25 @@ public class LaunchpadProjectActivity extends Activity {
 					viewFlipper.setOutAnimation(slideLeftOut);
 					viewFlipper.showNext();
 					c.set(5,  c.get(Calendar.DATE)+1); // increase day by one
-
-					if(isAlternativeLayoutOff){ // if 1st layout is being used
-						textDate1.setText(c.getDisplayName(Calendar.MONTH, Calendar.LONG,  Locale.US) + " " + c.get(Calendar.DATE) + ", " +c.get(Calendar.YEAR));
-						editText2.setText(returnEvents());
-						isAlternativeLayoutOff = false;
-
-					} else { //if 2nd layout is being used
-						textDate.setText(c.getDisplayName(Calendar.MONTH, Calendar.LONG,  Locale.US) + " " + c.get(Calendar.DATE) + ", " +c.get(Calendar.YEAR));
-						editText1.setText(returnEvents());
+					updateWhichLayout();
+					if(isAlternativeLayoutOff)
 						isAlternativeLayoutOff = true;
+					else 
+						isAlternativeLayoutOff = false;
 					}
 					//<- swipe
-				}  else if (e2.getX() - e1.getX() > SWIPE_MIN_DISTANCE && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
+				    else if (e2.getX() - e1.getX() > SWIPE_MIN_DISTANCE && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
 					viewFlipper.setInAnimation(slideRightIn);
 					viewFlipper.setOutAnimation(slideRightOut);
 					viewFlipper.showPrevious();
 					c.set(5,  c.get(Calendar.DATE)-1); //decrease day by one
-
-					if(isAlternativeLayoutOff){
-						textDate1.setText(c.getDisplayName(Calendar.MONTH, Calendar.LONG,  Locale.US) + " " + c.get(Calendar.DATE) + ", " +c.get(Calendar.YEAR));
-						editText2.setText(returnEvents());
-						isAlternativeLayoutOff = false;
-
-					} else {
-						textDate.setText(c.getDisplayName(Calendar.MONTH, Calendar.LONG,  Locale.US) + " " + c.get(Calendar.DATE) + ", " +c.get(Calendar.YEAR));
-						editText1.setText(returnEvents());
+					updateWhichLayout();
+					if(isAlternativeLayoutOff)
 						isAlternativeLayoutOff = true;
+					else 
+						isAlternativeLayoutOff = false;
 					}
-				}
+			
 			} catch (Exception e) {
 				// nothing
 			}
@@ -195,6 +252,16 @@ public class LaunchpadProjectActivity extends Activity {
 		//if (Event.getMatchingEvents("Date", returnDate(c.get(Calendar.YEAR), c.get(Calendar.MONTH)+1, c.get(Calendar.DATE))).get(0).getName() == null)
 		return "This is a test";
 		//else return Event.getMatchingEvents("Date", returnDate(c.get(Calendar.YEAR), c.get(Calendar.MONTH)+1, c.get(Calendar.DATE))).get(0).getName();
+	}
+	
+	private void updateWhichLayout(){
+		if(!isAlternativeLayoutOff){
+			textDate1.setText(c.getDisplayName(Calendar.MONTH, Calendar.LONG,  Locale.US) + " " + c.get(Calendar.DATE) + ", " +c.get(Calendar.YEAR));
+			editText2.setText(returnEvents());}
+		else {
+			textDate.setText(c.getDisplayName(Calendar.MONTH, Calendar.LONG,  Locale.US) + " " + c.get(Calendar.DATE) + ", " +c.get(Calendar.YEAR));
+			editText1.setText(returnEvents());
+		}
 	}
 	
     public boolean isOnline()

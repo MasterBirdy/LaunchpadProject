@@ -28,32 +28,33 @@ public final class R {
     public static final class id {
         public static final int RelativeLayout1=0x7f070000;
         public static final int button1=0x7f070015;
-        public static final int button10=0x7f070024;
+        public static final int button10=0x7f070025;
         public static final int button2=0x7f070017;
         public static final int button3=0x7f070018;
         public static final int button4=0x7f070019;
         public static final int button5=0x7f07001a;
         public static final int button6=0x7f07001b;
-        public static final int button7=0x7f07001d;
-        public static final int button8=0x7f070023;
-        public static final int button9=0x7f070025;
+        public static final int button6TWO=0x7f07001c;
+        public static final int button7=0x7f07001e;
+        public static final int button8=0x7f070024;
+        public static final int button9=0x7f070026;
         public static final int buttonSendFeedback=0x7f070013;
         public static final int buttonYes=0x7f070016;
         public static final int calendar=0x7f070014;
         public static final int checkBox1=0x7f070011;
         public static final int checkBox2=0x7f070012;
         public static final int checkBox3=0x7f070010;
-        public static final int date=0x7f07001f;
-        public static final int date1=0x7f070021;
+        public static final int date=0x7f070020;
+        public static final int date1=0x7f070022;
         public static final int editText1=0x7f07000f;
         public static final int editText2=0x7f07000d;
         public static final int editText3=0x7f070009;
         public static final int editText4=0x7f070003;
         public static final int editText5=0x7f07000b;
-        public static final int editTextAlt=0x7f070022;
-        public static final int editTextNotAlt=0x7f070020;
-        public static final int flipper=0x7f07001c;
-        public static final int linearLayout1=0x7f07001e;
+        public static final int editTextAlt=0x7f070023;
+        public static final int editTextNotAlt=0x7f070021;
+        public static final int flipper=0x7f07001d;
+        public static final int linearLayout1=0x7f07001f;
         public static final int spinnerDay=0x7f070005;
         public static final int spinnerMonth=0x7f070004;
         public static final int spinnerYear=0x7f070006;
@@ -68,9 +69,7 @@ public final class R {
     public static final class layout {
         public static final int addevent=0x7f030000;
         public static final int calendar=0x7f030001;
-        public static final int fghgd=0x7f030002;
-        public static final int jjjj=0x7f030003;
-        public static final int main=0x7f030004;
+        public static final int main=0x7f030002;
     }
     public static final class string {
         public static final int app_name=0x7f050001;
