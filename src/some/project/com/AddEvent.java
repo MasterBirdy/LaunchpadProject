@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class AddEvent extends Activity implements OnItemSelectedListener, OnClickListener{
@@ -124,52 +125,13 @@ public class AddEvent extends Activity implements OnItemSelectedListener, OnClic
         final EditText eventDescription = (EditText) findViewById(R.id.editText5);  
         String description = eventDescription.getText().toString();  
         
-        //get start time and turn into int
-        //get end time and turn into int
-        //problem with 4 digit time eg 1200
-        //works fine with 3 digit time eg 130
         String startTime = sTime.getSelectedItem().toString();
-        String s = startTime;
-        if(s.lastIndexOf(s) == 6)
-        {
-        s = removeCharAt(s, 6);
-        s = removeCharAt(s, 5);
-        s = removeCharAt(s, 2);
-        }
-        else  
-        {
-            s = removeCharAt(s, 5);
-            s = removeCharAt(s, 4);
-            s = removeCharAt(s, 1);
-        	
-        }
-        Integer start = Integer.parseInt(s); 
-        
-        
-        //get end time and turn into int
-        //problem with 4 digit time eg 1200
-        //works fine with 3 digit time eg 130
         String endTime = eTime.getSelectedItem().toString();
-        String e = endTime; 
-        if(endTime.length() == 7)
-        {
-        e = removeCharAt(e, 6);
-        e = removeCharAt(e, 5);
-        e = removeCharAt(e, 2);
-        }
-        else
-        {
-            e = removeCharAt(e, 5);
-            e = removeCharAt(e, 4);
-            e = removeCharAt(e, 1);
-        	
-        }
-        Integer end = Integer.parseInt(e);
+
         
         //month number might be plus one
         final Spinner monthSpinner = (Spinner) findViewById(R.id.spinnerMonth);  
-        String month = monthSpinner.getSelectedItem().toString(); 
-        Integer monthNumber = eventMonth.getSelectedItemPosition() + 1;
+        String month = "" + monthSpinner.getSelectedItemPosition() + 1;
         
         final Spinner daySpinner = (Spinner) findViewById(R.id.spinnerDay);  
         String day = daySpinner.getSelectedItem().toString(); 
@@ -216,12 +178,46 @@ public class AddEvent extends Activity implements OnItemSelectedListener, OnClic
         }
         
         //creating date object for arrayList
-        String date = month.concat(day).concat(year);
-        Date dateC = new Date();
-        dateC.setDate(dayNumber);
-        dateC.setMonth(monthNumber);
-        dateC.setYear(yearNumber);
+        String date = yearNumber + "-" + month + "-" + dayNumber;
         
+        //Parse the input times (1:30 am into 24 hr time -> 013000
+        boolean startTimeIsPm = startTime.endsWith("pm");
+        startTime = startTime.replace("pm", "");
+        startTime = startTime.replace("am", "");
+        startTime = startTime.replace(":", "");
+        int startTimeInt = Integer.parseInt(startTime);
+        if (startTimeIsPm)
+        {
+        	startTime += 12;
+        }
+        if (startTimeInt < 10)
+        {
+        	startTime = "0" + startTime;
+        }
+        else
+        {
+        	startTime = "" + startTime;
+        }
+        startTime += "00";
+
+        boolean endTimeIsPm = endTime.endsWith("pm");
+        endTime = endTime.replace("pm", "");
+        endTime = endTime.replace("am", "");
+        endTime = endTime.replace(":", "");
+        int endTimeInt = Integer.parseInt(endTime);
+        if (endTimeIsPm)
+        {
+        	endTime += 12;
+        }
+        if (endTimeInt < 10)
+        {
+        	endTime = "0" + endTime;
+        }
+        else
+        {
+        	endTime = "" + endTime;
+        }
+        endTime += "00";
         //these log files verify the information
         //remember what was entered and check with the
         //log cat
@@ -234,6 +230,7 @@ public class AddEvent extends Activity implements OnItemSelectedListener, OnClic
         Log.v(LOG_TAG, academic);
         Log.v(LOG_TAG, social);
         Log.v(LOG_TAG, location);
+        Log.v("Date", date);
         
         //the arrayList for the addEventMethod
         addForEvent = new ArrayList<String>();
@@ -247,8 +244,14 @@ public class AddEvent extends Activity implements OnItemSelectedListener, OnClic
         addForEvent.add(academic);
         addForEvent.add(social);
         addForEvent.add(professional);
-        
-       add = new Event(name, start, end, description, dateC, isAcademic, isSocial, isProfessional, location);
+
+        boolean eventAdded = Event.addEvent(addForEvent);
+        if (!eventAdded)
+        {
+        	TextView tv = new TextView (this);
+        	tv.setText("Please ensure all fields are filled in");
+        	setContentView (tv);
+        }
         
         //addEvent causes crash
         //add.addEvent(addForEvent);

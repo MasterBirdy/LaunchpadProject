@@ -30,7 +30,6 @@ public final class R {
         public static final int RelativeLayout1=0x7f070000;
         public static final int button1=0x7f070015;
         public static final int button10=0x7f070025;
-        public static final int button11=0x7f070027;
         public static final int button2=0x7f070017;
         public static final int button3=0x7f070018;
         public static final int button4=0x7f070019;
@@ -48,9 +47,9 @@ public final class R {
         public static final int checkBox3=0x7f070011;
         public static final int date=0x7f070020;
         public static final int date1=0x7f070022;
-        public static final int editText3=0x7f07000a;
+        public static final int editText3=0x7f070009;
         public static final int editText4=0x7f070003;
-        public static final int editText5=0x7f07000c;
+        public static final int editText5=0x7f07000b;
         public static final int editTextAlt=0x7f070023;
         public static final int editTextNotAlt=0x7f070021;
         public static final int flipper=0x7f07001d;
@@ -58,15 +57,15 @@ public final class R {
         public static final int spinnerDay=0x7f070005;
         public static final int spinnerETime=0x7f07000f;
         public static final int spinnerMonth=0x7f070004;
-        public static final int spinnerSTime=0x7f070008;
+        public static final int spinnerSTime=0x7f07000d;
         public static final int spinnerYear=0x7f070006;
         public static final int textView1=0x7f070001;
         public static final int textView2=0x7f070007;
         public static final int textView3=0x7f070010;
-        public static final int textView4=0x7f070009;
+        public static final int textView4=0x7f070008;
         public static final int textView5=0x7f070002;
-        public static final int textView6=0x7f07000b;
-        public static final int textView7=0x7f07000d;
+        public static final int textView6=0x7f07000a;
+        public static final int textView7=0x7f07000c;
     }
     public static final class layout {
         public static final int addevent=0x7f030000;

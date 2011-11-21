@@ -38,7 +38,6 @@ public class LaunchpadProjectActivity extends Activity {
 	private Button week6;
 	private Button yearButton; 
 	private Button monthButton;
-	private Button addEvent;
 
 	// stuff for detecting swipes
 	private static final int SWIPE_MIN_DISTANCE = 120;
@@ -103,7 +102,6 @@ public class LaunchpadProjectActivity extends Activity {
 		week6 = (Button)findViewById(R.id.button6TWO);
 		editText1 = (EditText) findViewById(R.id.editTextNotAlt);
 		editText2 = (EditText) findViewById(R.id.editTextAlt);
-		addEvent = (Button) findViewById(R.id.button11);
 
 		monthButton.setText(c.getDisplayName(Calendar.MONTH, Calendar.LONG,  Locale.US)); // sets the month button to the current month
 		yearButton.setText(c.get(Calendar.YEAR) + ""); // year button same thing
@@ -177,7 +175,7 @@ public class LaunchpadProjectActivity extends Activity {
 		});
 
 		// goes to addEvent activity
-		addEvent.setOnClickListener(new View.OnClickListener(){
+		monthButton.setOnClickListener(new View.OnClickListener(){
 			public void onClick( View v) {
 				Intent i = new Intent();
 				i.setClassName("some.project.com",

@@ -171,6 +171,21 @@ public class Event
     	return matchingEvents;		
 	}
 	
+	public static ArrayList <Event> getEventsOnDate (String date, boolean academic, boolean professional, boolean social)
+	{
+		ArrayList <Event> eventsOnDate = Event.getMatchingEvents("Date", date);
+		ArrayList <Event> eventsOnDateWithMatchingCategory = new ArrayList <Event> ();
+		for (Event event: eventsOnDate)
+		{
+			if (academic && event.isAcademic())
+				eventsOnDateWithMatchingCategory.add(event);
+			if (professional && event.isProfessional())
+				eventsOnDateWithMatchingCategory.add(event);
+			if (social && event.isSocial())
+				eventsOnDateWithMatchingCategory.add(event);
+		}
+		return eventsOnDateWithMatchingCategory;
+	}
 	
 	/**
 	 * Adds an event into the Sheet1 table
