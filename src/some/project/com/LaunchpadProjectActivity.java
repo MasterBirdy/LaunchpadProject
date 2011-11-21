@@ -66,21 +66,21 @@ public class LaunchpadProjectActivity extends Activity {
 		super.onCreate(savedInstanceState);  //boilerplate code
 		setContentView(R.layout.main);
 		
-//	     if (!isOnline())
-//	        {
-//	        	alert = new AlertDialog.Builder(getApplicationContext()).create();
-//	        	alert.setTitle("Error");
-//	        	alert.setMessage("No network connection");
-//	        	alert.setButton("Close", new DialogInterface.OnClickListener() {
-//					
-//					public void onClick(DialogInterface dialog, int which) {
-//						// TODO Auto-generated method stub
-//						return;
-//					}
-//				});
-//	        	alert.show();
-//	        	this.finish();
-//	        }
+	     if (!isOnline())
+	        {
+	        	alert = new AlertDialog.Builder(getApplicationContext()).create();
+	        	alert.setTitle("Error");
+	        	alert.setMessage("No network connection");
+	        	alert.setButton("Close", new DialogInterface.OnClickListener() {
+					
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+						return;
+					}
+				});
+	        	alert.show();
+	        	this.finish();
+	        }
 
 		monthButton = (Button) findViewById(R.id.button1);         // R.id.findStuff
 		yearButton = (Button) findViewById(R.id.buttonYes);
@@ -88,8 +88,8 @@ public class LaunchpadProjectActivity extends Activity {
 		textDate1 = (TextView) findViewById(R.id.date1);
 		viewFlipper = (ViewFlipper) findViewById(R.id.flipper);
 		week1 = (Button)findViewById(R.id.button2);
-		editText1 = (EditText) findViewById(R.id.editText1);
-		editText2 = (EditText) findViewById(R.id.editText2);
+		editText1 = (EditText) findViewById(R.id.editTextNotAlt);
+		editText2 = (EditText) findViewById(R.id.editTextAlt);
 
 		monthButton.setText(c.getDisplayName(Calendar.MONTH, Calendar.LONG,  Locale.US)); // sets the month button to the current month
 		yearButton.setText(c.get(Calendar.YEAR) + ""); // year button same thing

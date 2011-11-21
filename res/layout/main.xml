@@ -84,7 +84,7 @@
                     android:textSize="24dp" />
 
                 <EditText
-                    android:id="@+id/editText1"
+                    android:id="@+id/editTextNotAlt"
                     android:layout_width="319dp"
                     android:layout_height="250dp"
                     android:layout_weight="0.77"
@@ -114,7 +114,7 @@
                     android:textSize="24dp" />
 
                 <EditText
-                    android:id="@+id/editText1"
+                    android:id="@+id/editTextAlt"
                     android:layout_width="319dp"
                     android:layout_height="250dp"
                     android:layout_weight="0.77"
