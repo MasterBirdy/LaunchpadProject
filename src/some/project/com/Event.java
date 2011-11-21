@@ -211,7 +211,7 @@ public class Event
 		return eventAdded;
 	}
 	
-	/*
+
 	
 	public static void main (String [] args)
 	{
@@ -227,11 +227,11 @@ public class Event
 		eventDetails.add("1");
 		if (Event.addEvent(eventDetails))
 			System.out.println ("Added event");
-		for (Event event: Event.getMatchingEvents("Academic", "1"))
+		for (Event event: Event.getMatchingEvents("Date", "2011-11-14"))
 			System.out.println (event.getName());
 		
 	}
 	
-	*/
+	
 
 }

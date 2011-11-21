@@ -187,11 +187,8 @@ public class AddEvent extends Activity implements OnItemSelectedListener, OnClic
         addForEvent.add(academic);
         addForEvent.add(social);
         addForEvent.add(professional);
-        
-        add = new Event(name, start, end, description, dateC, isAcademic, isSocial, isProfessional, location);
-        
+        Event.addEvent(addForEvent);
         //add.addEvent(addForEvent);
-        
 		Intent i = new Intent(AddEvent.this, LaunchpadProjectActivity.class);
 		startActivity(i);
 			

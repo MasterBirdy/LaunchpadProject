@@ -1,0 +1,110 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (classFileParser.cpp:3494), pid=6240, tid=7048
+#  Error: ShouldNotReachHere()
+#
+# JRE version: 6.0_26-b03
+# Java VM: Java HotSpot(TM) Client VM (20.1-b02 mixed mode windows-x86 )
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00339400):  JavaThread "Unknown thread" [_thread_in_vm, id=7048, stack(0x00360000,0x003b0000)]
+
+Stack: [0x00360000,0x003b0000],  sp=0x003af86c,  free space=318k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x13379a]
+V  [jvm.dll+0x12e6fb]
+V  [jvm.dll+0x163fe]
+V  [jvm.dll+0x17c1f]
+V  [jvm.dll+0x26cc5]
+V  [jvm.dll+0x27506]
+V  [jvm.dll+0x278b5]
+V  [jvm.dll+0x27949]
+V  [jvm.dll+0x27a0c]
+V  [jvm.dll+0x27a8a]
+V  [jvm.dll+0x27b6d]
+V  [jvm.dll+0x27e39]
+V  [jvm.dll+0x6c523]
+V  [jvm.dll+0x6c8fc]
+V  [jvm.dll+0xf9d5c]
+V  [jvm.dll+0x11864b]
+V  [jvm.dll+0x9ec30]
+C  [javaw.exe+0x1657]
+C  [javaw.exe+0x1e2c]
+C  [javaw.exe+0x8644]
+C  [kernel32.dll+0x8f13c]  BaseThreadInitThunk+0xe
+C  [ntdll.dll+0x7d80d]  RtlCreateUserProcess+0x8c
+C  [ntdll.dll+0x7da1f]  RtlCreateProcessParameters+0x4e
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x00339400 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=7048, stack(0x00360000,0x003b0000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	C:\Program Files (x86)\Java\jre6\bin\javaw.exe
+0x779e0000 - 0x77b40000 	C:\Windows\SysWOW64\ntdll.dll
+0x75c70000 - 0x75d80000 	C:\Windows\syswow64\kernel32.dll
+0x73a50000 - 0x73a84000 	C:\Program Files\Alwil Software\Avast5\snxhk.dll
+0x75710000 - 0x757d6000 	C:\Windows\syswow64\ADVAPI32.dll
+0x75b80000 - 0x75c70000 	C:\Windows\syswow64\RPCRT4.dll
+0x75510000 - 0x75570000 	C:\Windows\syswow64\Secur32.dll
+0x75ab0000 - 0x75b80000 	C:\Windows\syswow64\USER32.dll
+0x76ea0000 - 0x76f30000 	C:\Windows\syswow64\GDI32.dll
+0x757e0000 - 0x75840000 	C:\Windows\system32\IMM32.DLL
+0x75ee0000 - 0x75fa8000 	C:\Windows\syswow64\MSCTF.dll
+0x75a00000 - 0x75aaa000 	C:\Windows\syswow64\msvcrt.dll
+0x779b0000 - 0x779b9000 	C:\Windows\syswow64\LPK.DLL
+0x76f30000 - 0x76fad000 	C:\Windows\syswow64\USP10.dll
+0x7c340000 - 0x7c396000 	C:\Program Files (x86)\Java\jre6\bin\msvcr71.dll
+0x6d7f0000 - 0x6da9f000 	C:\Program Files (x86)\Java\jre6\bin\client\jvm.dll
+0x73280000 - 0x732b2000 	C:\Windows\system32\WINMM.dll
+0x77010000 - 0x77155000 	C:\Windows\syswow64\ole32.dll
+0x75570000 - 0x755fd000 	C:\Windows\syswow64\OLEAUT32.dll
+0x73240000 - 0x7327e000 	C:\Windows\system32\OLEACC.dll
+0x73780000 - 0x737ac000 	C:\Windows\system32\apphelp.dll
+0x6d7a0000 - 0x6d7ac000 	C:\Program Files (x86)\Java\jre6\bin\verify.dll
+0x6d320000 - 0x6d33f000 	C:\Program Files (x86)\Java\jre6\bin\java.dll
+0x75ed0000 - 0x75ed7000 	C:\Windows\system32\PSAPI.DLL
+0x6d7e0000 - 0x6d7ef000 	C:\Program Files (x86)\Java\jre6\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 -Xbootclasspath:C:\Android\android-sdk\platforms\android-10\android.jar 
+java_command: some.project.com.Event
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files (x86)\Java\jdk1.6.0_22
+CLASSPATH=.;C:\Program Files (x86)\Java\jre6\lib\ext\QTJava.zip
+PATH=C:/Program Files (x86)/Java/jre6/bin/client;C:/Program Files (x86)/Java/jre6/bin;C:/Program Files (x86)/Java/jre6/lib/i386;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Program Files (x86)\CyberLink\Power2Go;C:\Program Files (x86)\Java\jdk1.6.0_22\bin;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseHg\;c:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\RailsInstaller\Git\cmd;C:\RailsInstaller\Ruby1.8.7\bin;C:\Program Files (x86)\Common Files\Hackety Hack\0.r1529\..;C:\Python27;C:\Program Files (x86)\gedit\bin\;C:\Users\amit\apache-ant-1.8.2\bin;C:\Users\amit\Desktop\eclipse;
+USERNAME=amit
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 23 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows Vista Build 6002 Service Pack 2
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 23 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1
+
+Memory: 4k page, physical 4094224k(867960k free), swap 8392460k(4109132k free)
+
+vm_info: Java HotSpot(TM) Client VM (20.1-b02) for windows-x86 JRE (1.6.0_26-b03), built on May  4 2011 00:50:59 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Sun Nov 20 16:09:37 2011
+elapsed time: 0 seconds
+
