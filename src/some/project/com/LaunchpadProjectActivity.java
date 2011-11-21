@@ -12,8 +12,13 @@ import android.view.View.OnTouchListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -50,12 +55,32 @@ public class LaunchpadProjectActivity extends Activity {
 
 	private boolean isAlternativeLayoutOff = true; // checks to see if the 2nd layout in ViewFlipper is being used
 	Calendar c = Calendar.getInstance(); 
+	
+    private ConnectivityManager connect;
+    private NetworkInfo net;
+    private AlertDialog alert;
 
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);  //boilerplate code
 		setContentView(R.layout.main);
+		
+//	     if (!isOnline())
+//	        {
+//	        	alert = new AlertDialog.Builder(getApplicationContext()).create();
+//	        	alert.setTitle("Error");
+//	        	alert.setMessage("No network connection");
+//	        	alert.setButton("Close", new DialogInterface.OnClickListener() {
+//					
+//					public void onClick(DialogInterface dialog, int which) {
+//						// TODO Auto-generated method stub
+//						return;
+//					}
+//				});
+//	        	alert.show();
+//	        	this.finish();
+//	        }
 
 		monthButton = (Button) findViewById(R.id.button1);         // R.id.findStuff
 		yearButton = (Button) findViewById(R.id.buttonYes);
@@ -166,8 +191,19 @@ public class LaunchpadProjectActivity extends Activity {
 	private String returnEvents(){
 
 		//if (Event.getMatchingEvents("Date", returnDate(c.get(Calendar.YEAR), c.get(Calendar.MONTH)+1, c.get(Calendar.DATE))).get(0).getName() == null)
-		return "No events";
+		return "This is a test";
 		//else return Event.getMatchingEvents("Date", returnDate(c.get(Calendar.YEAR), c.get(Calendar.MONTH)+1, c.get(Calendar.DATE))).get(0).getName();
 	}
+	
+    public boolean isOnline()
+    {
+    	connect = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+    	net = connect.getActiveNetworkInfo();
+    	
+    	if ((net != null) && (net.isConnectedOrConnecting()))
+    			return true;
+    	else
+    		return false;
+    }
 }
 
