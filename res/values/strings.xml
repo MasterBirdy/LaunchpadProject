@@ -87,11 +87,113 @@
                    
     </string-array>
     
-              <string name = "year_prompt">Choose a year</string>
-              <string-array name = "year_array">
-                  <item>2011</item>
-                  <item>2012</item>
-                  <item>2013</item>
-              </string-array>
-
+    <string name = "year_prompt">Choose a year</string>
+    <string-array name = "year_array">
+         <item>2011</item>
+         <item>2012</item>
+         <item>2013</item>
+     </string-array>
+     
+        <string name = "startTime_prompt" >Choose a time</string>
+            <string-array name = "startTime_array">
+                <item>12:00am</item>
+                <item>12:15am</item>
+                <item>12:30am</item>
+                <item>12:45am</item>
+                <item>1:00am</item>
+                <item>1:15am</item>
+                <item>1:30am</item>
+                <item>1:45am</item>
+                <item>2:00am</item>
+                <item>2:15am</item>
+                <item>2:30am</item>
+                <item>2:45am</item>
+                <item>3:00am</item>
+                <item>3:15am</item>
+                <item>3:30am</item>
+                <item>3:45am</item>
+                <item>4:00am</item>
+                <item>4:15am</item>
+                <item>4:30am</item>
+                <item>4:45am</item>
+                <item>5:00am</item>
+                <item>5:15am</item>
+                <item>5:30am</item>
+                <item>5:45am</item>
+                <item>6:00am</item>
+                <item>6:15am</item>
+                <item>6:30am</item>
+                <item>6:45am</item>
+                <item>7:00am</item>
+                <item>7:15am</item>
+                <item>7:30am</item>
+                <item>7:45am</item>
+                <item>8:00am</item>
+                <item>8:15am</item>
+                <item>8:30am</item>
+                <item>8:45am</item>
+                <item>9:00am</item>
+                <item>9:15am</item>
+                <item>9:30am</item>
+                <item>9:45am</item>
+                <item>10:00am</item>
+                <item>10:15am</item>
+                <item>10:30am</item>
+                <item>10:45am</item>
+                <item>11:00am</item>
+                <item>11:15am</item>
+                <item>11:30am</item>
+                <item>11:45am</item>               
+                <item>12:00pm</item>
+                <item>12:15pm</item>
+                <item>12:30pm</item>
+                <item>12:45pm</item>
+                <item>1:00pm</item>
+                <item>1:15pm</item>
+                <item>1:30pm</item>
+                <item>1:45pm</item>
+                <item>2:00pm</item>
+                <item>2:15pm</item>
+                <item>2:30pm</item>
+                <item>2:45pm</item>
+                <item>3:00pm</item>
+                <item>3:15pm</item>
+                <item>3:30pm</item>
+                <item>3:45pm</item>
+                <item>4:00pm</item>
+                <item>4:15pm</item>
+                <item>4:30pm</item>
+                <item>4:45pm</item>
+                <item>5:00pm</item>
+                <item>5:15pm</item>
+                <item>5:30pm</item>
+                <item>5:45pm</item>
+                <item>6:00pm</item>
+                <item>7:15pm</item>
+                <item>7:30pm</item>
+                <item>7:45pm</item>
+                <item>7:00pm</item>
+                <item>7:15pm</item>
+                <item>7:30pm</item>
+                <item>7:45pm</item>
+                <item>8:00pm</item>
+                <item>8:15pm</item>
+                <item>8:30pm</item>
+                <item>8:45pm</item>
+                <item>9:00pm</item>
+                <item>9:15pm</item>
+                <item>9:30pm</item>
+                <item>9:45pm</item>
+                <item>10:00pm</item>
+                <item>10:15pm</item>
+                <item>10:30pm</item>
+                <item>10:45pm</item>
+                <item>11:00pm</item>
+                <item>11:15pm</item>
+                <item>11:30pm</item>
+                <item>11:45pm</item>
+             
+            </string-array>
+            
+               
 </resources>

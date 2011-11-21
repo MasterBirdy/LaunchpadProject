@@ -26,10 +26,13 @@ public class AddEvent extends Activity implements OnItemSelectedListener, OnClic
 	Spinner eventMonth;
 	Spinner eventDay;
 	Spinner eventYear;
+	Spinner sTime;
+	Spinner eTime;
 	Button submitButton;
 	Date newDate;
 	Event add;
 	ArrayList<String> addForEvent;
+	
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,10 +59,7 @@ public class AddEvent extends Activity implements OnItemSelectedListener, OnClic
          adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
          eventDay.setAdapter(adapter2);
          eventDay.setOnItemSelectedListener(this);
-        
-        
-        //this adapter grabs the info from the strings.xml file
-        
+                
         eventYear = (Spinner)findViewById(R.id.spinnerYear);
         //this adapter grabs the info from the strings.xml file
         ArrayAdapter<CharSequence> adapter3 = 
@@ -69,14 +69,28 @@ public class AddEvent extends Activity implements OnItemSelectedListener, OnClic
         eventYear.setAdapter(adapter3);
         eventYear.setOnItemSelectedListener(this);
         
+        //start time Spinner
+        sTime = (Spinner)findViewById(R.id.spinnerSTime);
+        ArrayAdapter<CharSequence> adapter4 = 
+        		ArrayAdapter.createFromResource(this, 
+        				R.array.startTime_array, android.R.layout.simple_spinner_item);
+        adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sTime.setAdapter(adapter4);
+        sTime.setOnItemSelectedListener(this);
+        
+        eTime = (Spinner)findViewById(R.id.spinnerETime);
+        ArrayAdapter<CharSequence> adapter5 = 
+        		ArrayAdapter.createFromResource(this, 
+        				R.array.startTime_array, android.R.layout.simple_spinner_item);
+        adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        eTime.setAdapter(adapter5);
+        eTime.setOnItemSelectedListener(this);
+        
         //here is the button listener that will submit the info to the SQL database
         //in the onClick method is where the Event class will be used
         submitButton = (Button)findViewById(R.id.buttonSendFeedback);
         
         submitButton.setOnClickListener(this);
-        //create Event object here and pass in the above stuff
-        //this is the string for the event constructor but there are some mismatches
-
 
     }
 	
@@ -101,8 +115,6 @@ public class AddEvent extends Activity implements OnItemSelectedListener, OnClic
 
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		//addevent here
-        //add.addEvent(addForEvent);
 		final EditText eventName = (EditText) findViewById(R.id.editText4);  
         String name = eventName.getText().toString(); 
         
@@ -112,18 +124,52 @@ public class AddEvent extends Activity implements OnItemSelectedListener, OnClic
         final EditText eventDescription = (EditText) findViewById(R.id.editText5);  
         String description = eventDescription.getText().toString();  
         
-        final EditText startField = (EditText) findViewById(R.id.editText1);  
-        String startTime = startField.getText().toString();  
-        Integer start = Integer.parseInt(startTime);
-          
-        final EditText endField = (EditText) findViewById(R.id.editText2);  
-        String endTime = endField.getText().toString();  
-        Integer end = Integer.parseInt(endTime);
+        //get start time and turn into int
+        //get end time and turn into int
+        //problem with 4 digit time eg 1200
+        //works fine with 3 digit time eg 130
+        String startTime = sTime.getSelectedItem().toString();
+        String s = startTime;
+        if(s.lastIndexOf(s) == 6)
+        {
+        s = removeCharAt(s, 6);
+        s = removeCharAt(s, 5);
+        s = removeCharAt(s, 2);
+        }
+        else  
+        {
+            s = removeCharAt(s, 5);
+            s = removeCharAt(s, 4);
+            s = removeCharAt(s, 1);
+        	
+        }
+        Integer start = Integer.parseInt(s); 
+        
+        
+        //get end time and turn into int
+        //problem with 4 digit time eg 1200
+        //works fine with 3 digit time eg 130
+        String endTime = eTime.getSelectedItem().toString();
+        String e = endTime; 
+        if(endTime.length() == 7)
+        {
+        e = removeCharAt(e, 6);
+        e = removeCharAt(e, 5);
+        e = removeCharAt(e, 2);
+        }
+        else
+        {
+            e = removeCharAt(e, 5);
+            e = removeCharAt(e, 4);
+            e = removeCharAt(e, 1);
+        	
+        }
+        Integer end = Integer.parseInt(e);
         
         //month number might be plus one
         final Spinner monthSpinner = (Spinner) findViewById(R.id.spinnerMonth);  
         String month = monthSpinner.getSelectedItem().toString(); 
-        Integer monthNumber = eventMonth.getSelectedItemPosition();
+        Integer monthNumber = eventMonth.getSelectedItemPosition() + 1;
         
         final Spinner daySpinner = (Spinner) findViewById(R.id.spinnerDay);  
         String day = daySpinner.getSelectedItem().toString(); 
@@ -169,15 +215,29 @@ public class AddEvent extends Activity implements OnItemSelectedListener, OnClic
         	professional = "0";	
         }
         
+        //creating date object for arrayList
         String date = month.concat(day).concat(year);
         Date dateC = new Date();
         dateC.setDate(dayNumber);
         dateC.setMonth(monthNumber);
         dateC.setYear(yearNumber);
         
-        Log.v(name, "START TIME HEREEEEEEEEEEEEEEEE");
+        //these log files verify the information
+        //remember what was entered and check with the
+        //log cat
+        String LOG_TAG = "CheckThisPlease";
+        Log.v(LOG_TAG, name);
+        Log.v(LOG_TAG, description);
+        Log.v(LOG_TAG, startTime);
+        Log.v(LOG_TAG, endTime);
+        Log.v(LOG_TAG, professional);
+        Log.v(LOG_TAG, academic);
+        Log.v(LOG_TAG, social);
+        Log.v(LOG_TAG, location);
         
-        ArrayList<String> addForEvent = new ArrayList<String>();
+        //the arrayList for the addEventMethod
+        addForEvent = new ArrayList<String>();
+      
         addForEvent.add(name);
         addForEvent.add(date);
         addForEvent.add(startTime);
@@ -187,11 +247,21 @@ public class AddEvent extends Activity implements OnItemSelectedListener, OnClic
         addForEvent.add(academic);
         addForEvent.add(social);
         addForEvent.add(professional);
-        Event.addEvent(addForEvent);
+        
+       add = new Event(name, start, end, description, dateC, isAcademic, isSocial, isProfessional, location);
+        
+        //addEvent causes crash
         //add.addEvent(addForEvent);
+        
 		Intent i = new Intent(AddEvent.this, LaunchpadProjectActivity.class);
 		startActivity(i);
 			
 	}
+	
+	public static String removeCharAt(String s, int pos) {
+		   StringBuffer buf = new StringBuffer( s.length() - 1 );
+		   buf.append( s.substring(0,pos) ).append( s.substring(pos+1) );
+		   return buf.toString();
+		}
 
 }

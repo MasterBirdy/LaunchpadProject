@@ -60,15 +60,16 @@
         android:layout_toRightOf="@+id/button6"
         android:text="Wk6" />
 
-    <ViewFlipper 
-    	android:id="@+id/flipper"
-    	android:layout_width="fill_parent" 
-    	android:layout_height="fill_parent"
+    <ViewFlipper
+     android:id="@+id/flipper"
+     android:layout_width="fill_parent"
+     android:layout_height="fill_parent"
         android:layout_above="@+id/button7"
          android:layout_below="@+id/button3"
         android:layout_centerHorizontal="true"
         android:gravity="center">
-        
+        
+
             <LinearLayout
                 android:id="@+id/linearLayout1"
                 android:layout_width="wrap_content"
@@ -131,7 +132,7 @@
 </ViewFlipper>
     <Button
         android:id="@+id/button7"
-        android:layout_width="80dp"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
@@ -139,7 +140,7 @@
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="80dp"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/button7"
@@ -148,7 +149,7 @@
 
     <Button
         android:id="@+id/button10"
-        android:layout_width="80dp"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/button8"
@@ -157,7 +158,7 @@
 
     <Button
         android:id="@+id/button9"
-        android:layout_width="80dp"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/button10"
@@ -165,11 +166,20 @@
         android:textColor="#20B2AA" />
 
     <Button
+        android:id="@+id/button11"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/button9"
+        android:text="+Event"
+        android:textColor="#FF0080" />
+    
+    <Button
         android:id="@+id/buttonYes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:text="Year" />
-
-</RelativeLayout>
+    </RelativeLayout>
