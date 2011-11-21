@@ -15,6 +15,9 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 
+import android.os.AsyncTask;
+import android.util.Log;
+
 
 public class Event 
 {
@@ -192,46 +195,39 @@ public class Event
 		int i =0;
 		for (String eventDetail: eventDetails)
 		{
+			if (eventDetail.isEmpty())
+			{
+				eventAdded = false;
+				break; //none of the fields can be empty
+			}
 			urlValue += categories[i++] + "=" + eventDetail + "&";
 		}
+		
 		urlValue = urlValue.substring(0, urlValue.length()-1);
 		urlValue = urlValue.replace(" ", "%20");
-		try
-    	{
-    		HttpClient httpClient = new DefaultHttpClient();
-    		HttpPost httpPost = new HttpPost(urlValue);
-    		HttpResponse response = httpClient.execute(httpPost);
-    	}
-    	catch (Exception e)
-    	{
-    		System.out.println (e.getMessage());
-    		System.out.println (e);
-    		eventAdded = false;
-    	}
+		AddEventTask aet = new AddEventTask();
+		aet.execute(new String [] {urlValue});
 		return eventAdded;
 	}
 	
-
-	
-	public static void main (String [] args)
+	private static class AddEventTask extends AsyncTask <String, Void, String>
 	{
-		ArrayList <String> eventDetails = new ArrayList <String> ();
-		eventDetails.add("Test Event 5");
-		eventDetails.add("2010-10-10");
-		eventDetails.add("060000");
-		eventDetails.add("190000");
-		eventDetails.add("Description");
-		eventDetails.add("Test Location");
-		eventDetails.add("1");
-		eventDetails.add("0");
-		eventDetails.add("1");
-		if (Event.addEvent(eventDetails))
-			System.out.println ("Added event");
-		for (Event event: Event.getMatchingEvents("Date", "2011-11-14"))
-			System.out.println (event.getName());
 		
+		@Override
+		protected String doInBackground(String... params) {
+			String response = "";
+			for (String url : params) {
+				DefaultHttpClient client = new DefaultHttpClient();
+				HttpPost httpPost = new HttpPost(url);
+				try 
+				{
+					HttpResponse execute = client.execute(httpPost);
+				}
+				catch (Exception e) {
+					Log.v("Error In Executing Client Post", e == null ? "null": e.getMessage());
+				}
+			}
+			return response;
+		}	
 	}
-	
-	
-
 }
