@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.concurrent.ExecutionException;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -22,6 +23,9 @@ import android.util.Log;
 public class Event 
 {
 
+	private static final String EVENT_DELIMITER="NEXT_EVENT"; //String that delimits individual events 
+	private static final String EVENT_PART_DELIMITER="##";
+	
 	private String name;
 	private int startTime;
 	private int endTime;
@@ -130,45 +134,17 @@ public class Event
 	
 	public static ArrayList <Event> getMatchingEvents (String category, String categoryValue)
 	{
-		ArrayList <Event> matchingEvents = new ArrayList <Event> ();
+		String urlValue = "http://team1.appjam.roboteater.com/selecter.php?";
+		urlValue += "Category=" + category + "&" + category + "=" + categoryValue;
+		ServerEventTask set = new ServerEventTask();
+		set.execute(new String [] {urlValue});	
 		String result = "";
-		try
-    	{
-   
-    		HttpClient httpClient = new DefaultHttpClient();
-    		String urlValue = "http://team1.appjam.roboteater.com/selecter.php?";
-    		urlValue += "Category=" + category + "&" + category + "=" + categoryValue;
-    		HttpPost httpPost = 
-    			new HttpPost(urlValue);
-    		//Url was hardcoded in
-//    		httpPost.setEntity (new UrlEncodedFormEntity(namePairs));
-    		HttpResponse response = httpClient.execute(httpPost);
-    		HttpEntity entity = response.getEntity();
-    		InputStream is = entity.getContent();
-    		BufferedReader reader = 
-    			new BufferedReader(new InputStreamReader(is,"iso-8859-1"),8);
-            StringBuilder sb = new StringBuilder();
-            String line = null;
-            while ((line = reader.readLine()) != null) {
-                    sb.append(line + "\n");
-            }
-            is.close();
-     
-            result=sb.toString();
-    	}
-    	catch (Exception e)
-    	{
-    		System.err.println (e.getMessage());
-    	}
-    	String [] individualEventList = result.split("NEXT_EVENT");
-    	//Array contained null elements at the end that threw and exception
-    	//Array is therefore parsed to remove the last element
-    	individualEventList = Arrays.copyOfRange (individualEventList, 0, individualEventList.length-1);
-    	for (String event: individualEventList)
-    	{
-    		matchingEvents.add (new Event(event.split("##")));
-    	}
-    	return matchingEvents;		
+		try {
+			result = set.get();
+		} catch (InterruptedException e) {
+		} catch (ExecutionException e) {
+		}
+		return parseString (result);
 	}
 	
 	public static ArrayList <Event> getEventsOnDate (String date, boolean academic, boolean professional, boolean social)
@@ -187,6 +163,21 @@ public class Event
 		return eventsOnDateWithMatchingCategory;
 	}
 	
+	public static ArrayList <Event> searchEvents (String keyword)
+	{
+		String urlValue = "http://team1.appjam.roboteater.com/search.php?keyword="+keyword;
+		Log.v("Url value", urlValue);
+		ServerEventTask set = new ServerEventTask();
+		set.execute(new String [] {urlValue});	
+		String result = "";
+		try {
+			result = set.get();
+		} catch (InterruptedException e) {
+		} catch (ExecutionException e) {
+		}
+		return parseString (result);
+	}
+	
 	/**
 	 * Adds an event into the Sheet1 table
 	 * @param eventDetails - event details must be in the following order
@@ -201,7 +192,6 @@ public class Event
 	 * professional
 	 * @return
 	 */
-	
 	public static boolean addEvent (ArrayList <String> eventDetails)
 	{
 		boolean eventAdded = true;
@@ -217,32 +207,83 @@ public class Event
 			}
 			urlValue += categories[i++] + "=" + eventDetail + "&";
 		}
-		
+		if (eventDetails.get(6).equals("0") && eventDetails.get(7).equals("0") &&
+				eventDetails.get(8).equals("0"))
+		{
+			eventAdded = false;
+		}
 		urlValue = urlValue.substring(0, urlValue.length()-1);
 		urlValue = urlValue.replace(" ", "%20");
-		AddEventTask aet = new AddEventTask();
-		aet.execute(new String [] {urlValue});
+		ServerEventTask set = new ServerEventTask();
+		set.execute(new String [] {urlValue});
 		return eventAdded;
 	}
 	
-	private static class AddEventTask extends AsyncTask <String, Void, String>
+	//Parses the string returned from the SQL script into an ArrayList of Events
+	private static ArrayList <Event> parseString (String toParse)
+	{
+		ArrayList <Event> events = new ArrayList <Event> ();
+		String [] individualEventList = toParse.split(EVENT_DELIMITER);
+    	individualEventList = Arrays.copyOfRange (individualEventList, 0, individualEventList.length-1);
+		for (String event: individualEventList)
+		{
+			events.add(new Event (event.split(EVENT_PART_DELIMITER)));
+		}
+		return events;
+		
+	}
+	  
+	private static class ServerEventTask extends AsyncTask <String, Void, String>
 	{
 		
 		@Override
 		protected String doInBackground(String... params) {
 			String response = "";
 			for (String url : params) {
-				DefaultHttpClient client = new DefaultHttpClient();
-				HttpPost httpPost = new HttpPost(url);
-				try 
-				{
-					HttpResponse execute = client.execute(httpPost);
-				}
-				catch (Exception e) {
-					Log.v("Error In Executing Client Post", e == null ? "null": e.getMessage());
-				}
+				try
+		    	{
+		    		HttpClient httpClient = new DefaultHttpClient();
+		    		HttpPost httpPost = 
+		    			new HttpPost(url);
+		    		//Url was hardcoded in
+//		    		httpPost.setEntity (new UrlEncodedFormEntity(namePairs));
+		    		HttpResponse httpresponse = httpClient.execute(httpPost);
+		    		HttpEntity entity = httpresponse.getEntity();
+		    		InputStream is = entity.getContent();
+		    		BufferedReader reader = 
+		    			new BufferedReader(new InputStreamReader(is,"iso-8859-1"),8);
+		            StringBuilder sb = new StringBuilder();
+		            String line = null;
+		            while ((line = reader.readLine()) != null) {
+		                    sb.append(line + "\n");
+		            }
+		            is.close();
+		            response=sb.toString();
+		    	}
+		    	catch (Exception e)
+		    	{
+		    		System.err.println (e.getMessage());
+		    	}
 			}
 			return response;
 		}	
+	}
+	
+	public String toString ()
+	{
+		String output = "";
+		String newline = "\n";
+		output += "Event name: " + this.name;
+		output += newline;
+		output += "Event location: " + location;
+		output += newline;
+		this.date.setYear(this.date.getYear() - 1900);
+		output += "Event date: " + this.date.toString();
+		this.date.setYear(this.date.getYear() + 1900);
+		output += newline;
+		output += "Event start time-end time: " + startTime + "-" + endTime;
+		output += newline;
+		output += "Event description: " + description;
+		return output;
 	}
 }

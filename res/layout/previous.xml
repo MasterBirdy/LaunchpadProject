@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="58dp"
+        android:background="#002469" >
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/buttonModern"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="21dp"
+        android:background="#FAE051"
+        android:fadingEdge="vertical" >
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/FrameLayout02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/Title"
+        android:background="#002469"
+        android:fadingEdge="vertical" >
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="35dp"
+        android:background="#000000" >
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true">
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/FrameLayout01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/frameLayout3"
+        android:background="#002469"
+        android:fadingEdge="vertical" >
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/frameLayout1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="     Peter&apos;s Calendar
+     Select Your View"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/buttonClassic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/frameLayout4"
+        android:layout_alignLeft="@+id/frameLayout4"
+        android:layout_alignRight="@+id/frameLayout4"
+        android:layout_below="@+id/frameLayout2"
+        android:layout_marginBottom="248dp"
+        android:layout_marginTop="76dp"
+        android:text="ClassicView" />
+
+    <Button
+        android:id="@+id/buttonModern"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/frameLayout4"
+        android:layout_alignLeft="@+id/buttonClassic"
+        android:layout_alignRight="@+id/frameLayout4"
+        android:layout_alignTop="@+id/buttonClassic"
+        android:layout_marginBottom="140dp"
+        android:layout_marginTop="105dp"
+        android:text="Modern View" />
+
+</RelativeLayout>

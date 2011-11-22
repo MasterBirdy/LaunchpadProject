@@ -5,27 +5,27 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <Button
+    <!--  <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_toLeftOf="@+id/buttonYes"
-        android:text="Month" />
+        android:text="Month" />-->
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/button1"
+        android:layout_below="@+id/spinnerMM"
         android:text="Wk1" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
+        android:layout_below="@+id/spinnerMM"
         android:layout_toRightOf="@+id/button2"
         android:text="Wk2" />
 
@@ -33,7 +33,7 @@
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
+        android:layout_below="@+id/spinnerMM"
         android:layout_toRightOf="@+id/button3"
         android:text="Wk3" />
 
@@ -41,7 +41,7 @@
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
+        android:layout_below="@+id/spinnerMM"
         android:layout_toRightOf="@+id/button4"
         android:text="Wk4" />
 
@@ -49,30 +49,29 @@
         android:id="@+id/button6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
+        android:layout_below="@+id/spinnerMM"
         android:layout_toRightOf="@+id/button5"
         android:text="Wk5" />
    <Button
         android:id="@+id/button6TWO"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
+        android:layout_below="@+id/spinnerMM"
         android:layout_toRightOf="@+id/button6"
         android:text="Wk6" />
-
-    <ViewFlipper 
-    	android:id="@+id/flipper"
-    	android:layout_width="fill_parent" 
-    	android:layout_height="fill_parent"
-        android:layout_above="@+id/button7"
-         android:layout_below="@+id/button3"
+
+    <ViewFlipper
+        android:id="@+id/flipper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button3"
         android:layout_centerHorizontal="true"
-        android:gravity="center">
-        
+        android:gravity="center" >
+
             <LinearLayout
                 android:id="@+id/linearLayout1"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/date"
                 android:layout_toLeftOf="@+id/button6"
                 android:layout_toRightOf="@+id/button2"
@@ -90,19 +89,19 @@
                     android:text="Month Day, Year"
                     android:textSize="24dp" />
 
-                <EditText
-                    android:id="@+id/editTextNotAlt"
-                    android:layout_width="319dp"
-                    android:layout_height="250dp"
-                    android:layout_weight="0.77"
-                    android:inputType="textMultiLine" />
+<!--                 <EditText -->
+<!--                     android:id="@+id/editTextNotAlt" -->
+<!--                     android:layout_width="319dp" -->
+<!--                     android:layout_height="250dp" -->
+<!--                     android:layout_weight="0.77" -->
+<!--                     android:inputType="textMultiLine" /> -->
             </LinearLayout>
             
                 
             <LinearLayout
                 android:id="@+id/linearLayout1"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/date"
                 android:layout_toLeftOf="@+id/button6"
                 android:layout_toRightOf="@+id/button2"
@@ -118,20 +117,28 @@
                     android:layout_centerHorizontal="true"
                     android:gravity="center"
                     android:text="Month Day, Year"
-                    android:textSize="24dp" />
-
-                <EditText
-                    android:id="@+id/editTextAlt"
-                    android:layout_width="319dp"
-                    android:layout_height="250dp"
-                    android:layout_weight="0.77"
-                    android:inputType="textMultiLine" />
+                    android:textSize="24dp" />-
+			
+					
+<!--                 <EditText -->
+<!--                     android:id="@+id/editTextAlt" -->
+<!--                     android:layout_width="319dp" -->
+<!--                     android:layout_height="250dp" -->
+<!--                     android:layout_weight="0.77" -->
+<!--                     android:inputType="textMultiLine" /> -->
             </LinearLayout>
 
 </ViewFlipper>
+
+     <ListView
+                    android:id="@+id/list5"
+                         android:layout_below="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
     <Button
         android:id="@+id/button7"
-        android:layout_width="80dp"
+        android:layout_width="45dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
@@ -139,7 +146,7 @@
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="80dp"
+        android:layout_width="45dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/button7"
@@ -148,7 +155,7 @@
 
     <Button
         android:id="@+id/button10"
-        android:layout_width="80dp"
+        android:layout_width="45dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/button8"
@@ -157,19 +164,46 @@
 
     <Button
         android:id="@+id/button9"
-        android:layout_width="80dp"
+        android:layout_width="45dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/button10"
         android:text="P"
         android:textColor="#20B2AA" />
+        <Button
+        android:id="@+id/button11"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/button9"
+        android:text="+Event"
+        android:textColor="#800080" />
+          <Button
+        android:id="@+id/button12"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/button11"
+        android:text="SEARCH"
+        android:textColor="#2000AA" />
 
-    <Button
-        android:id="@+id/buttonYes"
+
+    <Spinner
+        android:id="@+id/spinnerMM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="Year" />
+        android:layout_alignRight="@+id/button5"
+        />
+    
+
+      <Spinner
+          android:id="@+id/spinnerFYear"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_above="@+id/button5"
+          android:layout_alignLeft="@+id/button6"
+          android:layout_alignParentRight="true" />
 
 </RelativeLayout>

@@ -17,8 +17,10 @@ public final class R {
     public static final class array {
         public static final int day_array30=0x7f060002;
         public static final int day_array31=0x7f060001;
+        public static final int eTime_array=0x7f060006;
+        public static final int filter_array=0x7f060004;
         public static final int month_array=0x7f060000;
-        public static final int startTime_array=0x7f060004;
+        public static final int startTime_array=0x7f060005;
         public static final int year_array=0x7f060003;
     }
     public static final class attr {
@@ -27,38 +29,63 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
+        public static final int FrameLayout01=0x7f070038;
+        public static final int FrameLayout02=0x7f070034;
         public static final int RelativeLayout1=0x7f070000;
-        public static final int button1=0x7f070015;
-        public static final int button10=0x7f070025;
-        public static final int button2=0x7f070017;
-        public static final int button3=0x7f070018;
-        public static final int button4=0x7f070019;
-        public static final int button5=0x7f07001a;
-        public static final int button6=0x7f07001b;
-        public static final int button6TWO=0x7f07001c;
-        public static final int button7=0x7f07001e;
-        public static final int button8=0x7f070024;
-        public static final int button9=0x7f070026;
+        public static final int Title=0x7f070035;
+        public static final int add_event=0x7f07001b;
+        public static final int button10=0x7f07002b;
+        public static final int button11=0x7f07002d;
+        public static final int button12=0x7f07002e;
+        public static final int button2=0x7f07001d;
+        public static final int button3=0x7f07001f;
+        public static final int button4=0x7f070020;
+        public static final int button5=0x7f070021;
+        public static final int button6=0x7f070022;
+        public static final int button6TWO=0x7f070023;
+        public static final int button7=0x7f070029;
+        public static final int button8=0x7f07002a;
+        public static final int button9=0x7f07002c;
+        public static final int buttonClassic=0x7f070039;
+        public static final int buttonModern=0x7f070033;
         public static final int buttonSendFeedback=0x7f070013;
-        public static final int buttonYes=0x7f070016;
-        public static final int calendar=0x7f070014;
         public static final int checkBox1=0x7f07000e;
         public static final int checkBox2=0x7f070012;
         public static final int checkBox3=0x7f070011;
-        public static final int date=0x7f070020;
-        public static final int date1=0x7f070022;
+        public static final int date=0x7f070026;
+        public static final int date1=0x7f070027;
         public static final int editText3=0x7f070009;
         public static final int editText4=0x7f070003;
         public static final int editText5=0x7f07000b;
-        public static final int editTextAlt=0x7f070023;
-        public static final int editTextNotAlt=0x7f070021;
-        public static final int flipper=0x7f07001d;
-        public static final int linearLayout1=0x7f07001f;
+        public static final int filer_spinner=0x7f070016;
+        public static final int flipper=0x7f070024;
+        public static final int flipper1=0x7f07001c;
+        public static final int frameLayout1=0x7f070032;
+        public static final int frameLayout2=0x7f070031;
+        public static final int frameLayout3=0x7f070037;
+        public static final int frameLayout4=0x7f070036;
+        public static final int linearLayout1=0x7f070025;
+        public static final int list5=0x7f070028;
+        public static final int main_row1=0x7f070015;
+        public static final int main_row2=0x7f070017;
+        public static final int main_row3=0x7f070019;
+        public static final int mainbg=0x7f070014;
+        public static final int modern_layout=0x7f070030;
+        public static final int searchEditText=0x7f07003b;
+        public static final int searchHomeButton=0x7f07003d;
+        public static final int searchSubmitButton=0x7f07003c;
+        public static final int search_events=0x7f07001a;
+        public static final int select_date=0x7f070018;
+        public static final int simpleeventlayout=0x7f07003a;
         public static final int spinnerDay=0x7f070005;
         public static final int spinnerETime=0x7f07000f;
+        public static final int spinnerFYear=0x7f07002f;
+        public static final int spinnerMM=0x7f07001e;
         public static final int spinnerMonth=0x7f070004;
         public static final int spinnerSTime=0x7f07000d;
         public static final int spinnerYear=0x7f070006;
+        public static final int successfulAddReturnButton=0x7f07003f;
+        public static final int successfulAddTextView=0x7f07003e;
         public static final int textView1=0x7f070001;
         public static final int textView2=0x7f070007;
         public static final int textView3=0x7f070010;
@@ -66,18 +93,26 @@ public final class R {
         public static final int textView5=0x7f070002;
         public static final int textView6=0x7f07000a;
         public static final int textView7=0x7f07000c;
+        public static final int unsuccessfulAddRetryButton=0x7f070041;
+        public static final int unsuccessfulAddReturnButton=0x7f070042;
+        public static final int unsuccessfulAddTextView=0x7f070040;
     }
     public static final class layout {
         public static final int addevent=0x7f030000;
-        public static final int calendar=0x7f030001;
-        public static final int fghgd=0x7f030002;
-        public static final int jjjj=0x7f030003;
-        public static final int main=0x7f030004;
+        public static final int alternativeui=0x7f030001;
+        public static final int main=0x7f030002;
+        public static final int modern_layout=0x7f030003;
+        public static final int previous=0x7f030004;
+        public static final int simpleeventlayout=0x7f030005;
+        public static final int successfuladd=0x7f030006;
+        public static final int testlayout=0x7f030007;
+        public static final int unsuccessfuladd=0x7f030008;
     }
     public static final class string {
         public static final int app_name=0x7f050001;
         public static final int day_prompt1=0x7f050003;
         public static final int day_prompt2=0x7f050004;
+        public static final int eTime_prompt=0x7f050007;
         public static final int hello=0x7f050000;
         public static final int month_prompt=0x7f050002;
         public static final int startTime_prompt=0x7f050006;

@@ -1,199 +1,309 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, LaunchpadProjectActivity!</string>
-    <string name="app_name">LaunchpadProject</string>
-    <string name = "month_prompt">Choose a month</string>
-    <string-array name = "month_array">
-        <item>January</item>
-        <item>February</item>
-        <item>March</item>
-        <item>June</item>
-        <item>July</item>
-        <item>August</item>
-        <item>September</item>
-        <item>November</item>
-        <item>December</item>          
-    </string-array>
-   
-            <string name = "day_prompt1">Choose a day </string>
-          <string-array name = "day_array31">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>13</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
-        <item>19</item>
-        <item>20</item>
-        <item>21</item>
-        <item>22</item>
-        <item>23</item>
-        <item>24</item>
-        <item>25</item>
-        <item>26</item>
-        <item>27</item>
-        <item>28</item>
-        <item>29</item>
-        <item>30</item>
-        <item>31</item>
-                   
-    </string-array>
-    
-              <string name = "day_prompt2">Choose a day </string>
-          <string-array name = "day_array30">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>13</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
-        <item>19</item>
-        <item>20</item>
-        <item>21</item>
-        <item>22</item>
-        <item>23</item>
-        <item>24</item>
-        <item>25</item>
-        <item>26</item>
-        <item>27</item>
-        <item>28</item>
-        <item>29</item>
-        <item>30</item>
-                   
-    </string-array>
-    
-    <string name = "year_prompt">Choose a year</string>
-    <string-array name = "year_array">
-         <item>2011</item>
-         <item>2012</item>
-         <item>2013</item>
-     </string-array>
-     
-        <string name = "startTime_prompt" >Choose a time</string>
-            <string-array name = "startTime_array">
-                <item>12:00am</item>
-                <item>12:15am</item>
-                <item>12:30am</item>
-                <item>12:45am</item>
-                <item>1:00am</item>
-                <item>1:15am</item>
-                <item>1:30am</item>
-                <item>1:45am</item>
-                <item>2:00am</item>
-                <item>2:15am</item>
-                <item>2:30am</item>
-                <item>2:45am</item>
-                <item>3:00am</item>
-                <item>3:15am</item>
-                <item>3:30am</item>
-                <item>3:45am</item>
-                <item>4:00am</item>
-                <item>4:15am</item>
-                <item>4:30am</item>
-                <item>4:45am</item>
-                <item>5:00am</item>
-                <item>5:15am</item>
-                <item>5:30am</item>
-                <item>5:45am</item>
-                <item>6:00am</item>
-                <item>6:15am</item>
-                <item>6:30am</item>
-                <item>6:45am</item>
-                <item>7:00am</item>
-                <item>7:15am</item>
-                <item>7:30am</item>
-                <item>7:45am</item>
-                <item>8:00am</item>
-                <item>8:15am</item>
-                <item>8:30am</item>
-                <item>8:45am</item>
-                <item>9:00am</item>
-                <item>9:15am</item>
-                <item>9:30am</item>
-                <item>9:45am</item>
-                <item>10:00am</item>
-                <item>10:15am</item>
-                <item>10:30am</item>
-                <item>10:45am</item>
-                <item>11:00am</item>
-                <item>11:15am</item>
-                <item>11:30am</item>
-                <item>11:45am</item>               
-                <item>12:00pm</item>
-                <item>12:15pm</item>
-                <item>12:30pm</item>
-                <item>12:45pm</item>
-                <item>1:00pm</item>
-                <item>1:15pm</item>
-                <item>1:30pm</item>
-                <item>1:45pm</item>
-                <item>2:00pm</item>
-                <item>2:15pm</item>
-                <item>2:30pm</item>
-                <item>2:45pm</item>
-                <item>3:00pm</item>
-                <item>3:15pm</item>
-                <item>3:30pm</item>
-                <item>3:45pm</item>
-                <item>4:00pm</item>
-                <item>4:15pm</item>
-                <item>4:30pm</item>
-                <item>4:45pm</item>
-                <item>5:00pm</item>
-                <item>5:15pm</item>
-                <item>5:30pm</item>
-                <item>5:45pm</item>
-                <item>6:00pm</item>
-                <item>7:15pm</item>
-                <item>7:30pm</item>
-                <item>7:45pm</item>
-                <item>7:00pm</item>
-                <item>7:15pm</item>
-                <item>7:30pm</item>
-                <item>7:45pm</item>
-                <item>8:00pm</item>
-                <item>8:15pm</item>
-                <item>8:30pm</item>
-                <item>8:45pm</item>
-                <item>9:00pm</item>
-                <item>9:15pm</item>
-                <item>9:30pm</item>
-                <item>9:45pm</item>
-                <item>10:00pm</item>
-                <item>10:15pm</item>
-                <item>10:30pm</item>
-                <item>10:45pm</item>
-                <item>11:00pm</item>
-                <item>11:15pm</item>
-                <item>11:30pm</item>
-                <item>11:45pm</item>
-             
-            </string-array>
-            
-               
+	<string name="hello">Hello World, LaunchpadProjectActivity!</string>
+	<string name="app_name">LaunchpadProject</string>
+	<string name="month_prompt">Choose a month</string>
+	<string-array name="month_array">
+		<item>January</item>
+		<item>February</item>
+		<item>March</item>
+		<item>April</item>
+		<item>May</item>
+		<item>June</item>
+		<item>July</item>
+		<item>August</item>
+		<item>September</item>
+		<item>October</item>
+		<item>November</item>
+		<item>December</item>
+	</string-array>
+
+	<string name="day_prompt1">Choose a day </string>
+	<string-array name="day_array31">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+		<item>6</item>
+		<item>7</item>
+		<item>8</item>
+		<item>9</item>
+		<item>10</item>
+		<item>11</item>
+		<item>12</item>
+		<item>13</item>
+		<item>14</item>
+		<item>15</item>
+		<item>16</item>
+		<item>17</item>
+		<item>18</item>
+		<item>19</item>
+		<item>20</item>
+		<item>21</item>
+		<item>22</item>
+		<item>23</item>
+		<item>24</item>
+		<item>25</item>
+		<item>26</item>
+		<item>27</item>
+		<item>28</item>
+		<item>29</item>
+		<item>30</item>
+		<item>31</item>
+
+	</string-array>
+
+	<string name="day_prompt2">Choose a day </string>
+	<string-array name="day_array30">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+		<item>6</item>
+		<item>7</item>
+		<item>8</item>
+		<item>9</item>
+		<item>10</item>
+		<item>11</item>
+		<item>12</item>
+		<item>13</item>
+		<item>14</item>
+		<item>15</item>
+		<item>16</item>
+		<item>17</item>
+		<item>18</item>
+		<item>19</item>
+		<item>20</item>
+		<item>21</item>
+		<item>22</item>
+		<item>23</item>
+		<item>24</item>
+		<item>25</item>
+		<item>26</item>
+		<item>27</item>
+		<item>28</item>
+		<item>29</item>
+		<item>30</item>
+
+	</string-array>
+
+	<string name="year_prompt">Choose a year</string>
+	<string-array name="year_array">
+		<item>2011</item>
+		<item>2012</item>
+		<item>2013</item>
+	</string-array>
+	<string-array name="filter_array">
+		<item>Show All Events</item>
+		<item>Show Academic Events</item>
+		<item>Show Professional Events</item>
+		<item>Show Social Events</item>
+	</string-array>
+
+
+	<string name="startTime_prompt">Choose a time</string>
+	<string-array name="startTime_array">
+		<item>12:00am</item>
+		<item>12:15am</item>
+		<item>12:30am</item>
+		<item>12:45am</item>
+		<item>1:00am</item>
+		<item>1:15am</item>
+		<item>1:30am</item>
+		<item>1:45am</item>
+		<item>2:00am</item>
+		<item>2:15am</item>
+		<item>2:30am</item>
+		<item>2:45am</item>
+		<item>3:00am</item>
+		<item>3:15am</item>
+		<item>3:30am</item>
+		<item>3:45am</item>
+		<item>4:00am</item>
+		<item>4:15am</item>
+		<item>4:30am</item>
+		<item>4:45am</item>
+		<item>5:00am</item>
+		<item>5:15am</item>
+		<item>5:30am</item>
+		<item>5:45am</item>
+		<item>6:00am</item>
+		<item>6:15am</item>
+		<item>6:30am</item>
+		<item>6:45am</item>
+		<item>7:00am</item>
+		<item>7:15am</item>
+		<item>7:30am</item>
+		<item>7:45am</item>
+		<item>8:00am</item>
+		<item>8:15am</item>
+		<item>8:30am</item>
+		<item>8:45am</item>
+		<item>9:00am</item>
+		<item>9:15am</item>
+		<item>9:30am</item>
+		<item>9:45am</item>
+		<item>10:00am</item>
+		<item>10:15am</item>
+		<item>10:30am</item>
+		<item>10:45am</item>
+		<item>11:00am</item>
+		<item>11:15am</item>
+		<item>11:30am</item>
+		<item>11:45am</item>
+		<item>12:00pm</item>
+		<item>12:15pm</item>
+		<item>12:30pm</item>
+		<item>12:45pm</item>
+		<item>1:00pm</item>
+		<item>1:15pm</item>
+		<item>1:30pm</item>
+		<item>1:45pm</item>
+		<item>2:00pm</item>
+		<item>2:15pm</item>
+		<item>2:30pm</item>
+		<item>2:45pm</item>
+		<item>3:00pm</item>
+		<item>3:15pm</item>
+		<item>3:30pm</item>
+		<item>3:45pm</item>
+		<item>4:00pm</item>
+		<item>4:15pm</item>
+		<item>4:30pm</item>
+		<item>4:45pm</item>
+		<item>5:00pm</item>
+		<item>5:15pm</item>
+		<item>5:30pm</item>
+		<item>5:45pm</item>
+		<item>6:00pm</item>
+		<item>7:15pm</item>
+		<item>7:30pm</item>
+		<item>7:45pm</item>
+		<item>7:00pm</item>
+		<item>7:15pm</item>
+		<item>7:30pm</item>
+		<item>7:45pm</item>
+		<item>8:00pm</item>
+		<item>8:15pm</item>
+		<item>8:30pm</item>
+		<item>8:45pm</item>
+		<item>9:00pm</item>
+		<item>9:15pm</item>
+		<item>9:30pm</item>
+		<item>9:45pm</item>
+		<item>10:00pm</item>
+		<item>10:15pm</item>
+		<item>10:30pm</item>
+		<item>10:45pm</item>
+		<item>11:00pm</item>
+		<item>11:15pm</item>
+		<item>11:30pm</item>
+		<item>11:45pm</item>
+
+	</string-array>
+	<string name="eTime_prompt">Choose a time</string>
+	<string-array name="eTime_array">
+		<item>12:00am</item>
+		<item>12:15am</item>
+		<item>12:30am</item>
+		<item>12:45am</item>
+		<item>1:00am</item>
+		<item>1:15am</item>
+		<item>1:30am</item>
+		<item>1:45am</item>
+		<item>2:00am</item>
+		<item>2:15am</item>
+		<item>2:30am</item>
+		<item>2:45am</item>
+		<item>3:00am</item>
+		<item>3:15am</item>
+		<item>3:30am</item>
+		<item>3:45am</item>
+		<item>4:00am</item>
+		<item>4:15am</item>
+		<item>4:30am</item>
+		<item>4:45am</item>
+		<item>5:00am</item>
+		<item>5:15am</item>
+		<item>5:30am</item>
+		<item>5:45am</item>
+		<item>6:00am</item>
+		<item>6:15am</item>
+		<item>6:30am</item>
+		<item>6:45am</item>
+		<item>7:00am</item>
+		<item>7:15am</item>
+		<item>7:30am</item>
+		<item>7:45am</item>
+		<item>8:00am</item>
+		<item>8:15am</item>
+		<item>8:30am</item>
+		<item>8:45am</item>
+		<item>9:00am</item>
+		<item>9:15am</item>
+		<item>9:30am</item>
+		<item>9:45am</item>
+		<item>10:00am</item>
+		<item>10:15am</item>
+		<item>10:30am</item>
+		<item>10:45am</item>
+		<item>11:00am</item>
+		<item>11:15am</item>
+		<item>11:30am</item>
+		<item>11:45am</item>
+		<item>12:00pm</item>
+		<item>12:15pm</item>
+		<item>12:30pm</item>
+		<item>12:45pm</item>
+		<item>1:00pm</item>
+		<item>1:15pm</item>
+		<item>1:30pm</item>
+		<item>1:45pm</item>
+		<item>2:00pm</item>
+		<item>2:15pm</item>
+		<item>2:30pm</item>
+		<item>2:45pm</item>
+		<item>3:00pm</item>
+		<item>3:15pm</item>
+		<item>3:30pm</item>
+		<item>3:45pm</item>
+		<item>4:00pm</item>
+		<item>4:15pm</item>
+		<item>4:30pm</item>
+		<item>4:45pm</item>
+		<item>5:00pm</item>
+		<item>5:15pm</item>
+		<item>5:30pm</item>
+		<item>5:45pm</item>
+		<item>6:00pm</item>
+		<item>7:15pm</item>
+		<item>7:30pm</item>
+		<item>7:45pm</item>
+		<item>7:00pm</item>
+		<item>7:15pm</item>
+		<item>7:30pm</item>
+		<item>7:45pm</item>
+		<item>8:00pm</item>
+		<item>8:15pm</item>
+		<item>8:30pm</item>
+		<item>8:45pm</item>
+		<item>9:00pm</item>
+		<item>9:15pm</item>
+		<item>9:30pm</item>
+		<item>9:45pm</item>
+		<item>10:00pm</item>
+		<item>10:15pm</item>
+		<item>10:30pm</item>
+		<item>10:45pm</item>
+		<item>11:00pm</item>
+		<item>11:15pm</item>
+		<item>11:30pm</item>
+		<item>11:45pm</item>
+
+	</string-array>
+
+
 </resources>
